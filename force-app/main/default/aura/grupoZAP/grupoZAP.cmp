@@ -1,0 +1,88 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+Informações de endereço sssssss
+
+	<div class="container">
+		<form class="slds-form--stacked">
+			<div>
+				<ui:inputText aura:id="txtEnderecoCobranca" 
+							  label="Endereço de Cobrança"
+							  class="slds-input" />
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtRuaCobranca" 
+							  label="Rua de Cobrança"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCidadeCobranca" 
+							  label="Cidade de Cobrança"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtEstadoCobranca" 
+							  label="Rua de Cobrança"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCEPCobranca" 
+							  label="CEP de Cobrança"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtPaisCobranca" 
+							  label="País de Cobrança"
+							  class="slds-input" />				
+			</div>	
+
+
+			<div>
+				<ui:inputText aura:id="txtEndereco" 
+							  label="Endereço"
+							  class="slds-input" />
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtRuaEntrega" 
+							  label="Rua de Entrega"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCidadeEntrega" 
+							  label="Cidade de Entrega"
+							  class="slds-input" />				
+			</div>
+			
+			<div>
+				<ui:inputText aura:id="txtEstadoEntrega" 
+							  label="Rua de Entrega"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCEPEntrega" 
+							  label="CEP de Entrega"
+							  class="slds-input" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtPaisEntrega" 
+							  label="País de Entrega"
+							  class="slds-input" />				
+			</div>	
+
+			<div>
+				<ui:button label="Salvar"
+                           class="slds-button slds-button--brand"
+                            />
+			</div>	
+
+
+		</form>
+	</div>
+</aura:component>

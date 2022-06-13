@@ -1,0 +1,131 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="CepController"  access="global">
+    
+    <aura:attribute name="cepCobranca" type="String" 	/>
+	<aura:attribute name="cep" type="String" />
+    <aura:attribute name="cepCobrancaCallback" type="CepTO" />
+    <aura:attribute name="cepEntregaCallback" type="CepTO" />
+    <aura:attribute name="mensagemErro" type="String" />
+    
+    
+	Informações de endereço
+
+	<div class="container">
+		<form class="slds-form--stacked">
+            
+            <div>
+                <ui:inputText aura:id="txtCEPCobranca" 
+							  label="CEP de Cobrança"
+							  class="slds-input"
+                              value="{!v.cepCobranca}"
+                              placeholder="CEP de Cobrança" />
+            </div>
+            
+			<div>
+				<ui:button label="Buscar CEP Cobrança"
+                           class="slds-button slds-button--brand"
+                           press="{!c.getCepCobranca}" />
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtRuaCobranca" 
+							  label="Rua de Cobrança"
+							  class="slds-input"
+                              value="{!v.cepCobrancaCallback.logradouro}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCidadeCobranca" 
+							  label="Cidade de Cobrança"
+							  class="slds-input"
+                              value="{!v.cepCobrancaCallback.localidade}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtEstadoCobranca" 
+							  label="Rua de Cobrança"
+							  class="slds-input"
+                              value="{!v.cepCobrancaCallback.uf}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtPaisCobranca" 
+							  label="País de Cobrança"
+							  class="slds-input"
+                              value="Brasil"/>				
+			</div>	
+
+			<div>
+                <ui:inputText aura:id="txtCEP" 
+							  label="CEP"
+							  class="slds-input"
+                              maxLength="9"
+                              value="{!v.cep}"
+                              placeholder="CEP" />                
+            </div>
+            
+			<div>
+				<ui:button label="Buscar CEP"
+                           class="slds-button slds-button--brand"
+                           press="{!c.getCepEntrega}" />
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtRuaEntrega" 
+							  label="Rua de Entrega"
+							  class="slds-input"
+                              value="{!v.cepEntregaCallback.logradouro}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCidadeEntrega" 
+							  label="Cidade de Entrega"
+							  class="slds-input"
+                              value="{!v.cepEntregaCallback.localidade}" />				
+			</div>
+			
+			<div>
+				<ui:inputText aura:id="txtEstadoEntrega" 
+							  label="Rua de Entrega"
+							  class="slds-input"
+                              value="{!v.cepEntregaCallback.uf}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtCEPEntrega" 
+							  label="CEP de Entrega"
+							  class="slds-input"
+                              value="{!v.cepEntregaCallback.cep}" />				
+			</div>
+
+			<div>
+				<ui:inputText aura:id="txtPaisEntrega" 
+							  label="País de Entrega"
+							  class="slds-input"
+                              value="Brasil"/>				
+			</div>	
+
+			<div>
+				<ui:button label="Salvar"
+                           class="slds-button slds-button--brand"
+                           press="{!c.salvarCep}" />
+			</div>
+            
+			<div>
+				<ui:button label="Limpar campos"
+                           class="slds-button slds-button--brand"
+                           press="{!c.limparCampos}" />
+			</div>
+
+			<div>
+                <ui:inputCheckbox aura:id="check" label="Selected?" change="{!c.onCheck}" />
+            </div>
+            
+            <div>
+                <ui:outputText value="{!v.mensagemErro}"/>	
+            </div>
+
+
+		</form>
+	</div>
+
+</aura:component>
