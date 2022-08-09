@@ -1,4 +1,5 @@
 import { LightningElement, track } from 'lwc';
+import my_resource from '@salesforce/resourceUrl/einstein';
 
 export default class SimpleCalculator extends LightningElement {
     @track currentResult;
@@ -7,6 +8,9 @@ export default class SimpleCalculator extends LightningElement {
 
     firstNumber;
     secondNumber;
+
+    einsteinImage = my_resource;
+    
 
     numberChangeHandler(event){
         const inputBox = event.target,
@@ -23,6 +27,7 @@ export default class SimpleCalculator extends LightningElement {
     addHandler(){
         const firstNumber = parseInt(this.firstNumber),
             secondNumber = parseInt(this.secondNumber);
+            
 
         // this.currentResult = 'Result of ' + firstNumber + ' + ' + secondNumber + ' is ' + (firstNumber + secondNumber);
         this.currentResult = `Result of ${firstNumber} + ${secondNumber} is ${(firstNumber + secondNumber)}`;

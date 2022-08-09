@@ -1,5 +1,10 @@
 <template>
-    <lightning-card title="Simple Calculator" icon-name="standard:formula">
+    <lightning-card title="Welcome">
+        <div class="slds-m-around_medium">
+            <img src={einsteinImage}>
+        </div>
+    </lightning-card>
+    <lightning-card title="Simple Calculator" icon-name="standard:formula">        
         <lightning-layout multiple-rows>
             <lightning-layout-item size="12" padding="around-medium">
                 <lightning-input type="number" name="firstNumber" onchange={numberChangeHandler}></lightning-input>
