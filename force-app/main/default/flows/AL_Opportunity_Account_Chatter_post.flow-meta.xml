@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <interviewLabel>AL Opportunity Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AL Opportunity Account Chatter post</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>This create records on feeditem for associated opportunity account.</description>
+        <name>CDR_Create_chatter_post_on_Account</name>
+        <label>CDR- Create chatter post on Account</label>
+        <locationX>501</locationX>
+        <locationY>60</locationY>
+        <inputAssignments>
+            <field>Body</field>
+            <value>
+                <stringValue>A New Opportunity Created with amount  {!VarOpportunityAmount}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LinkUrl</field>
+            <value>
+                <stringValue>https://leobrito-dev-ed.lightning.force.com/lightning/r/Opportunity/{!VarOpportunityId}/view</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>VarOpportunityAccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Title</field>
+            <value>
+                <elementReference>VarOpportunityName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>LinkPost</stringValue>
+            </value>
+        </inputAssignments>
+        <object>FeedItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>93</locationX>
+        <locationY>65</locationY>
+        <connector>
+            <targetReference>CDR_Create_chatter_post_on_Account</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This variable stores opportunity associated account id.</description>
+        <name>VarOpportunityAccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable stores opportunity amount</description>
+        <name>VarOpportunityAmount</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <description>This variable stores opportunity id.</description>
+        <name>VarOpportunityId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable stores opportunity name.</description>
+        <name>VarOpportunityName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

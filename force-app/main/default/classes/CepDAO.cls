@@ -9,6 +9,6 @@ public with sharing class CepDAO {
     }
     
     public void inserirCep(Account conta){
-		insert conta;        
-    }  
+		    insert conta;        
+    }
 }
